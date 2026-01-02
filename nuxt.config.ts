@@ -32,7 +32,7 @@ export default defineNuxtConfig({
   },
   modules: ['@nuxtjs/tailwindcss'],
   nitro: {
-    preset: 'node'
+    preset: 'node-server'
   },
   experimental: {
     typedPages: true
