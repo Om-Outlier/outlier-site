@@ -15,7 +15,7 @@ const groupedServices = computed(() =>
 )
 
 useHead({
-  title: 'OUTLIER builds marketing & commercial platforms end-to-end',
+  title: 'OUTLIER (Thailand)',
   meta: [
     { name: 'description', content: 'Strategy, build, data, and growth in one team. OUTLIER delivers custom marketing and commercial platforms across Thailand.' },
     { property: 'og:title', content: 'OUTLIER (Thailand)' },

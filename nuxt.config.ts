@@ -18,8 +18,8 @@ export default defineNuxtConfig({
       link: [
         // Explicit favicon variants to avoid browser fallbacks to defaults
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon.png' },
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon.png' },
         { rel: 'shortcut icon', type: 'image/png', href: '/favicon.png' },
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'apple-touch-icon', href: '/images/logo-outlier-square.png' }
       ]
     }
