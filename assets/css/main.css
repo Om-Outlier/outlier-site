@@ -90,6 +90,15 @@ h1, h2 {
 .logo-image {
   @apply h-12 max-w-[140px] object-contain mx-auto;
 }
+.logo-image--wide {
+  @apply max-w-[180px];
+}
+.logo-image--extra-wide {
+  @apply max-w-[220px] h-14;
+}
+.logo-image--large {
+  @apply h-14 max-w-[170px];
+}
 
 .service-card {
   @apply bg-white shadow-sm border transition-transform duration-200;
@@ -156,13 +165,17 @@ h1, h2 {
 }
 
 .filter-bar {
-  @apply inline-flex items-center gap-1 px-2 py-2 rounded-full border border-slate-200 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.06)];
+  @apply inline-flex items-center gap-1 px-2 py-2 rounded-full border border-slate-200 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.06)] min-w-max;
 }
 .filter-pill {
   @apply inline-flex items-center gap-2 px-3.5 py-2 rounded-full border border-transparent text-sm font-semibold text-slate-600;
 }
 .filter-pill--active {
   @apply bg-slate-900 text-white border-slate-900;
+}
+
+.filter-scroll {
+  @apply w-full overflow-x-auto;
 }
 .view-toggle {
   @apply inline-flex items-center gap-2;

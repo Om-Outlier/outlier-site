@@ -171,9 +171,9 @@ useHead({
     <section class="section">
       <div class="max-w-6xl mx-auto px-4 md:px-6">
         <SectionHeader
-          eyebrow="Brands"
+          eyebrow="Clients"
           title="Trusted across categories"
-          description="Representative logos from engagements; detailed references available under NDA." />
+          description="We partner with market leaders across multiple industries to design and deliver tech-enabled marketing and commercial growth solutions." />
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           <div
             v-for="logo in clientLogos"
@@ -183,7 +183,7 @@ useHead({
               <img
                 :src="logo.image"
                 :alt="logo.label"
-                class="logo-image"
+                :class="['logo-image', logo.className]"
                 loading="lazy" />
             </picture>
             <span v-else>{{ logo.label }}</span>

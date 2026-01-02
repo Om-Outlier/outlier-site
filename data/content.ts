@@ -418,16 +418,17 @@ export const stats = [
 export type ClientLogo = {
   label: string
   image?: string
+  className?: string
 }
 
 export const clientLogos: ClientLogo[] = [
   { label: 'Unilever', image: '/images/clients/unilever.png' },
-  { label: 'Beiersdorf', image: '/images/clients/beiersdorf.webp' },
+  { label: 'Nestlé', image: '/images/clients/nestle.svg' },
   { label: 'Johnson & Johnson', image: '/images/clients/jnj.svg' },
   { label: 'Kimberly-Clark', image: '/images/clients/kimberlyclark.svg' },
   { label: 'Kao', image: '/images/clients/kao.webp' },
   { label: 'Castrol', image: '/images/clients/castrol.svg' },
-  { label: 'PTT', image: '/images/clients/ptt.png' },
+  { label: 'PTT', image: '/images/clients/ptt.png', className: 'logo-image--extra-wide' },
   { label: 'Thai Union', image: '/images/clients/thaiunion.png' },
   { label: 'Breeze', image: '/images/clients/breeze.avif' },
   { label: 'Comfort', image: '/images/clients/comfort.png' },
@@ -438,23 +439,23 @@ export const clientLogos: ClientLogo[] = [
   { label: 'Clear', image: '/images/clients/clear.svg' },
   { label: 'Knorr', image: '/images/clients/knorr.avif' },
   { label: 'Milo', image: '/images/clients/milo.avif' },
-  { label: 'Nescafé', image: '/images/clients/nescafe.jpg' },
-  { label: 'Nestlé', image: '/images/clients/nestle.svg' },
+  { label: 'Nescafé', image: '/images/clients/nescafe.jpg', className: 'logo-image--large' },
+  { label: 'Beiersdorf', image: '/images/clients/beiersdorf.webp' },
   { label: 'Nestle Icecream', image: '/images/clients/nestle%20icecream.jpg' },
   { label: 'Hershey', image: '/images/clients/hershey.png' },
   { label: 'KitKat', image: '/images/clients/kitkat.avif' },
   { label: 'Purina', image: '/images/clients/purina.png' },
   { label: 'Pure Life', image: '/images/clients/purelife.avif' },
   { label: 'S-26', image: '/images/clients/s26.webp' },
-  { label: 'Suntory Pepsi', image: '/images/clients/suntorypepsi.jpg' },
+  { label: 'Suntory Pepsi', image: '/images/clients/suntorypepsi.jpg', className: 'logo-image--large' },
   { label: 'S&P', image: '/images/clients/s%26p.webp' },
   { label: 'Canton Paradise', image: '/images/clients/cantonparadise.jpg' },
-  { label: 'GetFresh', image: '/images/clients/getfresh.png' },
+  { label: 'GetFresh', image: '/images/clients/getfresh.png', className: 'logo-image--large' },
   { label: 'Areeya', image: '/images/clients/areeya.png' },
   { label: 'The Mall Group', image: '/images/clients/the%20mall.png' },
-  { label: 'WhiteStory', image: '/images/clients/whitestory.svg' },
-  { label: 'Chavana', image: '/images/clients/chavana.jpg' },
-  { label: 'Sino Pacific', image: '/images/clients/sinopacific.png' },
+  { label: 'WhiteStory', image: '/images/clients/whitestory.jpg' },
+  { label: 'Chavana', image: '/images/clients/chavana.webp', className: 'logo-image--wide' },
+  { label: 'Sino Pacific', image: '/images/clients/sinopacific.webp' },
   { label: 'Citra', image: '/images/clients/citra.avif' },
   { label: 'Hygiene', image: '/images/clients/hygiene.jpg' },
   { label: 'The Magnum Icecream Company', image: '/images/clients/the_magnum_icecream_company.avif' }

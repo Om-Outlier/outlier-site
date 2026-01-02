@@ -79,18 +79,20 @@ const visibleGroups = computed(() => {
         eyebrow="Services"
         title="Strategy + execution for marketing and commercial platforms"
         description="We cover the full lifecycle: strategy, build, data, activation, and growth operations." />
-      <div class="mt-6 flex flex-wrap items-center gap-3">
-        <div class="filter-bar">
-          <button
-            v-for="pill in filters"
-            :key="pill.value"
-            type="button"
-            class="filter-pill"
-            :class="{ 'filter-pill--active': selectedCategory === pill.value }"
-            @click="selectedCategory = pill.value">
-            <span>{{ pill.label }}</span>
-            <span class="text-slate-400 text-xs">({{ pill.count }})</span>
-          </button>
+      <div class="mt-6 flex flex-col gap-3">
+        <div class="filter-scroll">
+          <div class="filter-bar">
+            <button
+              v-for="pill in filters"
+              :key="pill.value"
+              type="button"
+              class="filter-pill"
+              :class="{ 'filter-pill--active': selectedCategory === pill.value }"
+              @click="selectedCategory = pill.value">
+              <span>{{ pill.label }}</span>
+              <span class="text-slate-400 text-xs">({{ pill.count }})</span>
+            </button>
+          </div>
         </div>
       </div>
 
