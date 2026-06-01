@@ -25,7 +25,8 @@ export default defineNuxtConfig({
     }
   },
   runtimeConfig: {
-    contactStoragePath: 'data/leads.jsonl',
+    // Override in production with NUXT_CONTACT_STORAGE_PATH, e.g. /home/outlier/data/outlier-site/leads.jsonl
+    contactStoragePath: process.env.NUXT_CONTACT_STORAGE_PATH || '.data/leads.jsonl',
     public: {
       siteUrl: 'https://www.outlier.co.th'
     }

@@ -16,7 +16,8 @@ Nuxt 3 + TypeScript, Tailwind-based marketing site for OUTLIER. Content is local
 ## Contact form storage
 - Form POSTs to `/api/contact`.
 - Server-side validation, honeypot (`website`), and in-memory rate limiting (5 reqs/hour/IP).
-- Leads append to JSONL at `data/leads.jsonl` (path configurable via `runtimeConfig.contactStoragePath`).
+- Leads append to JSONL at `.data/leads.jsonl` by default.
+- In production, set `NUXT_CONTACT_STORAGE_PATH` to a writable path outside the repo, for example `/home/outlier/data/outlier-site/leads.jsonl`.
 - Stored fields: name, company, email, phone, message, timestamp, pageUrl, userAgent.
 
 ## SEO
@@ -27,5 +28,5 @@ Nuxt 3 + TypeScript, Tailwind-based marketing site for OUTLIER. Content is local
 ## Deployment notes
 - Target Node/Nitro server (`pnpm build` + `pnpm start`).
 - Run the built Nitro entrypoint from `.output/server/index.mjs`; do not run `.nuxt/dist/server/server.mjs` directly.
-- Ensure the runtime user can write to `data/` for lead capture.
+- Ensure the runtime user can write to `NUXT_CONTACT_STORAGE_PATH` for lead capture.
 - Configure `runtimeConfig.public.siteUrl` for correct canonical + sitemap URLs.
