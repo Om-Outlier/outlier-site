@@ -25,6 +25,7 @@ Nuxt 3 + TypeScript, Tailwind-based marketing site for OUTLIER. Content is local
 - Per-page canonical links for insights and services.
 
 ## Deployment notes
-- Target Node/Nitro server (`nuxt build` + `nuxt start`).
+- Target Node/Nitro server (`pnpm build` + `pnpm start`).
+- Run the built Nitro entrypoint from `.output/server/index.mjs`; do not run `.nuxt/dist/server/server.mjs` directly.
 - Ensure the runtime user can write to `data/` for lead capture.
 - Configure `runtimeConfig.public.siteUrl` for correct canonical + sitemap URLs.

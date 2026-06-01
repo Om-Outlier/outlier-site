@@ -407,6 +407,398 @@ In a market where products are increasingly easy to replicate, platforms are how
   },
 ]
 
+export type JobDetailSection = {
+  title: string
+  body?: string[]
+  items?: string[]
+  subsections?: JobDetailSection[]
+}
+
+export type JobListing = {
+  slug: string
+  title: string
+  type: string
+  location: string
+  summary: string
+  responsibilities?: string[]
+  requirements?: string[]
+  niceToHave?: string[]
+  detailSections?: JobDetailSection[]
+}
+
+export const jobListings: JobListing[] = [
+  {
+    slug: 'marketing-manager',
+    title: 'Marketing Manager',
+    type: 'Full-time',
+    location: 'Bangkok, Thailand',
+    summary: 'Build and scale OUTLIER’s marketing capability while driving growth from existing clients across on-ground activation, digital performance, platform commerce marketing, and commercial expansion.',
+    detailSections: [
+      {
+        title: 'About OUTLIER',
+        body: [
+          'OUTLIER is a transformation company that builds and operates end-to-end commercial systems spanning data, technology, marketing, and operations.',
+          'We work with leading brands to implement platforms such as CDPs, eCommerce, AI solutions, and digital infrastructure, and extend these capabilities into full-scale marketing and growth execution.',
+          'Our focus is simple: turn systems into revenue, and marketing into a scalable growth engine.'
+        ]
+      },
+      {
+        title: 'About the Role',
+        body: [
+          'We are looking for a Marketing Manager who will play a key role in building and scaling our marketing capability, while driving growth from existing clients.',
+          'This is not a traditional marketing role. You will be responsible for turning marketing into a revenue-driving engine, not just campaign execution.'
+        ],
+        items: [
+          'On-ground activation across events, retail, and offline environments',
+          'Digital marketing and performance',
+          'Platform and commerce marketing across KOL, content, live, and short video',
+          'Client growth and commercial expansion'
+        ]
+      },
+      {
+        title: 'What You’ll Own',
+        subsections: [
+          {
+            title: 'Build & Lead the Marketing Function',
+            items: [
+              'Build and scale a high-performing marketing team across internal and external resources',
+              'Define structure, roles, and workflows across offline, digital, and platform marketing',
+              'Establish standards for execution quality, speed, and performance',
+              'Develop capabilities aligned with business and revenue growth'
+            ]
+          },
+          {
+            title: 'Grow Marketing Business from Clients',
+            items: [
+              'Identify opportunities to extend current transformation projects into marketing engagements',
+              'Work closely with internal teams to translate client needs into actionable marketing initiatives',
+              'Support client discussions and proposals for marketing execution',
+              'Drive long-term client value through continuous engagement'
+            ]
+          },
+          {
+            title: 'Integrated Campaign Leadership',
+            items: [
+              'Plan and execute end-to-end campaigns across on-ground activations, digital channels, and platform-related marketing',
+              'Lead activations across events, roadshows, retail, ads, content, CRM, LINE, KOL, live, short video, and traffic driving to eCommerce campaigns',
+              'Ensure seamless integration across all touchpoints',
+              'Maintain consistency in messaging, branding, and the customer journey'
+            ]
+          },
+          {
+            title: 'Digital Marketing & Performance',
+            items: [
+              'Oversee digital channels, both organic and paid, including Meta, Google, TikTok, and LINE OA',
+              'Work with teams to develop high-performing creatives and content',
+              'Monitor key performance metrics and continuously optimize campaigns',
+              'Apply data-driven thinking to improve efficiency and results'
+            ]
+          },
+          {
+            title: 'Platform & Commerce Marketing',
+            items: [
+              'Support marketing initiatives on commerce platforms such as Shopee, Lazada, and TikTok Shop in collaboration with internal or client-side teams',
+              'Drive traffic and engagement into platform campaigns through marketing activities',
+              'Plan and execute KOL/influencer campaigns, live commerce, and short video content',
+              'Develop clear KOL and content briefs aligned with campaign objectives',
+              'Coordinate with creators, influencers, and production teams to deliver high-performing content',
+              'Ensure platform-related marketing is integrated with broader campaign strategy',
+              'Monitor and optimize performance of content, KOL, and live initiatives'
+            ]
+          },
+          {
+            title: 'Campaign Operations & Execution Excellence',
+            items: [
+              'Own the full campaign lifecycle from planning to execution, reporting, and optimization',
+              'Manage timelines, budgets, and cross-functional coordination',
+              'Ensure high-quality, efficient, and scalable delivery'
+            ]
+          },
+          {
+            title: 'Partner & Stakeholder Management',
+            items: [
+              'Collaborate with internal Transformation and Operation teams to deliver integrated solutions',
+              'Manage external partners, agencies, and vendors',
+              'Align stakeholders around campaign goals and business outcomes'
+            ]
+          }
+        ]
+      },
+      {
+        title: 'Experience',
+        items: [
+          '4-7 years in marketing, with exposure to both offline and digital channels',
+          'Experience managing campaigns end-to-end',
+          'Experience in agency or client-facing roles is a strong advantage'
+        ]
+      },
+      {
+        title: 'Skills',
+        items: [
+          'Strong understanding of at least two of these areas: digital marketing, on-ground activation and event execution, or platform marketing',
+          'Hands-on knowledge of digital marketing across Meta, Google, TikTok, and LINE',
+          'Understanding of platform marketing across TikTok, Shopee, and Lazada, especially KOL, live, and short video',
+          'Experience working with influencers, creators, and content teams',
+          'Strong project management and ability to handle multiple initiatives',
+          'Data-driven mindset with ability to translate performance into action',
+          'Ability to identify opportunities and turn them into executable plans'
+        ]
+      },
+      {
+        title: 'Mindset',
+        items: [
+          'Hands-on and execution-driven, able to move between strategy and doing',
+          'Ownership mindset, accountable for outcomes and not just tasks',
+          'Commercial awareness and understanding of how marketing drives business results',
+          'Comfortable working across both field execution and digital environments'
+        ]
+      },
+      {
+        title: 'Why This Role is Different',
+        items: [
+          'You will help build a marketing function, not just join one',
+          'You will work across offline, online, and platform end-to-end',
+          'You will contribute to growing revenue from existing clients',
+          'You will operate at the intersection of marketing, technology, and business'
+        ]
+      },
+      {
+        title: 'Why Join OUTLIER',
+        items: [
+          'Work on high-impact projects across leading brands',
+          'Be part of a team combining marketing, data, and technology',
+          'High ownership, fast growth, and real business exposure'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'transformation-associate-junior-senior',
+    title: 'Transformation Associate (Junior / Senior)',
+    type: 'Full-time',
+    location: 'Bangkok, Thailand',
+    summary: 'Own transformation work that bridges business strategy, marketing, technology, data, and system-level solutions into practical outcomes that drive measurable business impact.',
+    detailSections: [
+      {
+        title: 'About OUTLIER',
+        body: [
+          'At OUTLIER, we solve real business problems through transformation, integrating marketing, technology, data, and commercial thinking into practical, measurable solutions.',
+          'We do not build platforms for the sake of technology. We build solutions that drive business results.',
+          'This role sits at the core of how OUTLIER operates. It is a hands-on role for people who can lead transformation work by bridging business strategy and system-level solutions, not narrow specialists.'
+        ]
+      },
+      {
+        title: 'About the Role',
+        body: [
+          'The Transformation Associate role is an execution and ownership role. You are expected to frame problems, design solutions, own client relationships, and drive work to measurable commercial outcomes.',
+          'You will work across System Solutions such as CRM, AI-enabled systems, eCommerce, and other business platforms, defining how they should work and ensuring they deliver real adoption and business impact.',
+          'You are not expected to code, but you must think like a system and product designer. Senior-level candidates are expected to own client relationships directly and make independent decisions to ensure solutions meet both client requirements and business goals.',
+          'High performers progress into transformation leadership. This role is demanding, by design.'
+        ]
+      },
+      {
+        title: 'Why This Role Is Different',
+        items: [
+          'Client Ownership: you are the trusted point of contact, lead client conversations, manage expectations, and are accountable for the relationship, not just the deliverable',
+          'Independent Decision-Making: you analyze requirements, solve problems independently, and determine the right path forward to deliver what the business actually needs',
+          'Multi-Disciplinary Mastery: you operate across business strategy, marketing, system solutions, data, and AI, and connect them into one coherent solution',
+          'Commercial Accountability: success is measured by results, including growth, efficiency, adoption, and impact'
+        ]
+      },
+      {
+        title: "What You'll Do",
+        subsections: [
+          {
+            title: 'Work hands-on across business, marketing, technology, and data',
+            items: [
+              'Operate directly across disciplines to solve real-world transformation problems',
+              'Focus on driving measurable business and commercial results, not just building platforms or tools'
+            ]
+          },
+          {
+            title: 'Design and execute end-to-end solutions',
+            items: [
+              'Frame problems and strategy, then drive execution, performance tracking, and optimization',
+              'Own the full lifecycle of system solutions such as CRM, AI-enabled systems, eCommerce, and similar platforms',
+              'Define requirements, user flows, logic, and architecture so solutions are practical, scalable, and adopted',
+              'Ensure solutions align with both client expectations and technical requirements throughout the process'
+            ]
+          },
+          {
+            title: 'Apply marketing and commercial thinking',
+            items: [
+              'Ensure every solution supports growth, revenue, efficiency, or operational impact',
+              'Translate business problems into clear, user-centered digital experiences that drive real usage and adoption'
+            ]
+          },
+          {
+            title: 'Collaborate with developers, designers, and clients',
+            items: [
+              'Own the client relationship directly by leading discussions, managing expectations, aligning stakeholders, and ensuring project requirements are met',
+              'Work closely with technical and design teams to ensure solutions are practical, scalable, adopted, and commercially impactful'
+            ]
+          },
+          {
+            title: 'Conduct hands-on data analysis',
+            items: [
+              'Generate insights, evaluate performance, and measure whether solutions are delivering intended business outcomes',
+              'Use Generative AI tools effectively to accelerate research, ideation, analysis, and solution design'
+            ]
+          },
+          {
+            title: 'Take ownership of solution adoption and impact',
+            items: [
+              'Own not just delivery, but real-world results',
+              'Ensure solutions are used, scaled, and continuously improved against commercial targets'
+            ]
+          },
+          {
+            title: 'Mentor junior team members',
+            items: [
+              'Review deliverables, give structured feedback, and help raise the team’s problem-solving and execution standards'
+            ]
+          }
+        ]
+      },
+      {
+        title: "What We're Looking For",
+        subsections: [
+          {
+            title: 'Required',
+            items: [
+              '3-5+ years of experience in transformation, consulting, product management, marketing, business development, technology, or a related field',
+              'Degree in Business, Marketing, Economics, Engineering, Technology, or any field emphasizing problem-solving and analytical thinking',
+              'Proven ability to own deliverables end-to-end with minimal supervision',
+              'Demonstrated experience managing client relationships and communicating directly with stakeholders',
+              'Strong strategic and commercial judgment, with the ability to make sound decisions and connect solutions to business outcomes while fulfilling requirements',
+              'Ability to work with ambiguity, structure complex problems, and make decisions under pressure',
+              'High ownership mentality, resilience, and drive'
+            ]
+          },
+          {
+            title: 'Nice to Have',
+            items: [
+              'Hands-on experience with system solutions such as CRM, AI-enabled platforms, or eCommerce',
+              'Familiarity with design tools, analytics tools, or AI tools in a practical workflow',
+              'Experience owning high-stakes projects, startup initiatives, or entrepreneurial ventures'
+            ]
+          }
+        ]
+      },
+      {
+        title: 'Career Growth & Progression',
+        body: [
+          'This is a performance-based role with a clear path into transformation leadership.'
+        ],
+        items: [
+          'Progression is based on capability, impact, and ownership, not tenure',
+          'High performers gain greater client responsibility and decision-making scope early',
+          'You will be developed into a transformation leader capable of bridging business, marketing, and technology'
+        ]
+      },
+      {
+        title: 'Who Will Thrive Here',
+        body: ['You are likely to succeed if you:'],
+        items: [
+          'Want real ownership of clients and outcomes, not just task execution',
+          'Are confident making independent decisions and driving projects to meet requirements',
+          'Solve complex, ambiguous problems independently',
+          'Are comfortable with high expectations and direct feedback',
+          'Think commercially and care deeply about whether the solution actually works for the business',
+          'Aspire to become a transformation leader, not a narrow specialist'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'graphic-designer',
+    title: 'Graphic Designer',
+    type: 'Full-time',
+    location: 'Bangkok, Thailand',
+    summary: 'Create practical, on-brand visual assets for online and offline marketing campaigns, FMCG activations, customer touchpoints, platforms, and real campaign execution.',
+    detailSections: [
+      {
+        title: "What you'll do",
+        items: [
+          'Design online and offline artwork for marketing campaigns, including social media content, digital ads, campaign banners, POSM, event materials, and customer touchpoints',
+          'Create and adapt visual assets for applications, websites, CRM campaigns, loyalty platforms, and on-ground activations',
+          'Support FMCG campaign execution through artwork for brand activations, retail touchpoints, product launches, and event displays',
+          'Prepare final artwork files for digital channels, print production, vendors, and real campaign implementation',
+          'Take ownership of assigned design tasks from brief to final delivery',
+          'Manage end-to-end creative execution, including brief understanding, design development, artwork adaptation, revision, and final file preparation',
+          'Ensure all creative outputs are on-brand, accurate, practical, and aligned with campaign objectives',
+          'Work closely with Marketing, Account Management, Project Management, Technology, and external vendors when needed',
+          'Use AI tools to support idea generation, image creation, layout exploration, and faster creative production',
+          'Manage multiple projects and deadlines in a fast-paced campaign environment',
+          'Support simple short-form video editing, AI-generated video content, motion graphics, or 3D booth/event display when required. Skills in these areas will be considered a plus'
+        ]
+      },
+      {
+        title: 'What We’re Looking For',
+        items: [
+          'Fast, hands-on, and adaptable',
+          'Able to manage multiple projects at the same time',
+          'Able to execute work from brief to final delivery with minimal supervision',
+          'Comfortable working in a fast-paced campaign environment',
+          'Curious about AI, MarTech, and new creative workflows',
+          'Able to work well with cross-functional teams',
+          'Able to balance creativity with business needs, timelines, and execution quality',
+          'Interested in growing beyond traditional graphic design into campaign, platform, and customer engagement work'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'senior-ecommerce-executive',
+    title: 'Senior eCommerce Executive',
+    type: 'Full-time',
+    location: 'Bangkok, Thailand',
+    summary: 'Drive eCommerce performance for consumer brands across marketplace and DTC channels. You will manage end-to-end eCommerce execution — from storefront optimization and promotions to data activation and conversion improvement — working closely with brand and technology teams.',
+    responsibilities: [
+      'Manage day-to-day eCommerce operations across marketplaces (Lazada, Shopee, TikTok Shop) and DTC channels',
+      'Plan and execute promotional campaigns, flash sales, and platform-specific activations',
+      'Analyze sales and traffic data to identify performance gaps and optimization opportunities',
+      'Coordinate with creative, logistics, and brand teams to ensure seamless execution',
+      'Monitor competitor activity and recommend tactical responses',
+      'Report on KPIs and contribute to eCommerce strategy planning'
+    ],
+    requirements: [
+      '3–5 years of experience in eCommerce, digital marketing, or category management',
+      'Hands-on experience managing storefronts on Lazada, Shopee, or TikTok Shop',
+      'Strong data literacy — comfortable pulling and interpreting platform analytics',
+      'Detail-oriented with strong project management skills',
+      'Good written and verbal communication in Thai and English'
+    ],
+    niceToHave: [
+      'Experience with DTC commerce platforms or brand-owned online stores',
+      'Familiarity with CRM or first-party data activation',
+      'Background in FMCG or consumer goods'
+    ]
+  },
+  {
+    slug: 'talent-acquisition-branding-intern',
+    title: 'Talent Acquisition & Branding Intern',
+    type: 'Internship',
+    location: 'Bangkok, Thailand',
+    summary: 'We are looking for a Talent Acquisition & Branding Intern who wants to grow in recruitment, employer branding, candidate engagement, and AI-driven HR. This internship offers hands-on experience in how companies attract, engage, and hire top talent while learning how AI can support the future of recruitment.',
+    responsibilities: [
+      'Support end-to-end recruitment activities',
+      'Help source and screen potential candidates',
+      'Assist with employer branding and recruitment marketing content',
+      'Support candidate engagement and candidate experience initiatives',
+      'Learn how to use AI tools to improve recruitment workflows',
+      'Work closely with the People & Talent Manager on real recruitment and branding projects'
+    ],
+    requirements: [
+      'Passion for recruitment, branding, business, technology, or marketing',
+      'Strong communication and interpersonal skills',
+      'Creative mindset with attention to detail',
+      'Willingness to learn, grow, and take ownership',
+      'Interest in AI literacy and how AI can support modern HR'
+    ]
+  }
+]
+
 export const partnerships = ['ISO 27001 certified', 'LINE Partner', 'Google Cloud Partner', 'TikTok Partner']
 
 export const stats = [

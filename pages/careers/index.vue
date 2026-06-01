@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 import { useHead, useRuntimeConfig, useFetch } from '#imports'
+import { jobListings } from '~/data/content'
 
 useHead({
   title: 'Careers | OUTLIER',
@@ -8,14 +9,16 @@ useHead({
   link: [{ rel: 'canonical', href: `${useRuntimeConfig().public.siteUrl}/careers` }]
 })
 
+const { query } = useRoute()
+
 const form = reactive({
   name: '',
   email: '',
-  role: '',
+  role: typeof query.role === 'string' ? query.role : '',
   portfolioLinks: [''],
   cvLink: '',
   message: '',
-  website: '' // honeypot
+  website: ''
 })
 
 const maxLinks = 5
@@ -32,7 +35,7 @@ const submitForm = async () => {
       .filter(Boolean)
       .slice(0, maxLinks)
       .join(', ')
-    const composedMessage = `Role of interest: ${form.role || 'Not specified'}\nPortfolio/LinkedIn: ${portfolioLinks || 'Not provided'}\nCV: ${form.cvLink || 'Not provided'}\n\nWhat I’ve shipped:\n${form.message}`
+    const composedMessage = `Role of interest: ${form.role || 'Not specified'}\nPortfolio/LinkedIn: ${portfolioLinks || 'Not provided'}\nCV: ${form.cvLink || 'Not provided'}\n\nWhat I've shipped:\n${form.message}`
     const { error } = await useFetch('/api/contact', {
       method: 'POST',
       body: {
@@ -78,11 +81,16 @@ const removePortfolioLink = (index: number) => {
       <h1 class="section-title">Join the OUTLIER team</h1>
       <p class="text-lg text-slate-700">For people who challenge the norm and raise the bar.</p>
       <div class="card">
-        <h2 class="text-xl font-semibold text-slate-900 mb-3">Current focus roles</h2>
+        <h2 class="text-xl font-semibold text-slate-900 mb-3">Current opening roles</h2>
         <ul class="space-y-2 text-slate-700">
-          <li class="flex gap-2 items-start"><span class="text-brand-600 font-semibold">▸</span><span>Junior Transformation Marketing</span></li>
-          <li class="flex gap-2 items-start"><span class="text-brand-600 font-semibold">▸</span><span>Senior Transformation Marketing</span></li>
-          <li class="flex gap-2 items-start"><span class="text-brand-600 font-semibold">▸</span><span>Senior Full-Stack Engineer</span></li>
+          <li v-for="job in jobListings" :key="job.slug" class="flex gap-2 items-start">
+            <span class="text-brand-600 font-semibold mt-0.5">▸</span>
+            <NuxtLink
+              :to="`/careers/${job.slug}`"
+              class="hover:text-brand-600 hover:underline transition-colors">
+              {{ job.title }}
+            </NuxtLink>
+          </li>
         </ul>
       </div>
       <div class="card space-y-4">
@@ -101,14 +109,17 @@ const removePortfolioLink = (index: number) => {
           <div class="grid md:grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-medium text-slate-800">Role of interest</label>
-              <input v-model="form.role" class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2" placeholder="e.g., Transformation Marketing" />
+              <select v-model="form.role" class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 bg-white">
+                <option value="">Select a role…</option>
+                <option v-for="job in jobListings" :key="job.slug" :value="job.title">{{ job.title }}</option>
+              </select>
             </div>
           </div>
           <div class="space-y-2">
             <label class="block text-sm font-medium text-slate-800">Portfolio / LinkedIn (up to 5 links)</label>
             <div class="space-y-2">
               <div
-                v-for="(link, index) in form.portfolioLinks"
+                v-for="(_, index) in form.portfolioLinks"
                 :key="index"
                 class="flex items-center gap-2">
                 <input
@@ -136,7 +147,7 @@ const removePortfolioLink = (index: number) => {
             <input v-model="form.cvLink" class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2" placeholder="Link to CV/Resume (Google Drive, Notion, etc.)" />
           </div>
           <div>
-            <label class="block text-sm font-medium text-slate-800">What you’ve shipped</label>
+            <label class="block text-sm font-medium text-slate-800">What you've shipped</label>
             <textarea v-model="form.message" rows="4" required class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2" placeholder="Highlights, outcomes, and impact"></textarea>
           </div>
           <div class="hidden">
@@ -148,7 +159,7 @@ const removePortfolioLink = (index: number) => {
               <span v-if="status === 'submitting'">Submitting…</span>
               <span v-else>Send application</span>
             </button>
-            <p v-if="status === 'success'" class="text-green-700 font-semibold">Received — we’ll reply shortly.</p>
+            <p v-if="status === 'success'" class="text-green-700 font-semibold">Received — we'll reply shortly.</p>
             <p v-if="status === 'error'" class="text-red-600">{{ errorMessage }}</p>
           </div>
         </form>
