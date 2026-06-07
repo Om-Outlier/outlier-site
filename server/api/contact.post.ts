@@ -60,7 +60,7 @@ export default defineEventHandler(async (event) => {
   await appendFile(storagePath, `${JSON.stringify(record)}\n`, { encoding: 'utf-8' })
 
   const sendgridApiKey = process.env.SENDGRID_API_KEY
-  const toRecipients = ['om.b@outlier.co.th', 'pinyapat.j@outlier.co.th']
+  const toRecipients = ['om.b@outlier.co.th', 'pinyapat.j@outlier.co.th', 'chonpicha.n@outlier.co.th']
   const fromEmail = record.topic?.toLowerCase().includes('career') ? 'careers@outlier.co.th' : 'contact@outlier.co.th'
 
   if (sendgridApiKey) {
